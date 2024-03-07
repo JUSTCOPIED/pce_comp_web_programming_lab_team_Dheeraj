@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body.login-page {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Set min-height to 100vh for full viewport height */
+        }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%; /* Adjust the width as needed */
+            max-width: 400px; /* Set max-width for better responsiveness */
+            margin-top: 50px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .return-home-button {
+            background-color: #ccc;
+            color: #000;
+            width: 100%; /* Make the button full width */
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .return-home-button:hover {
+            background-color: #999;
+        }
+
+        .checkbox-container label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .checkbox-container p {
+            margin: 5px 0;
+        }
+
+        .or-divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .or-divider hr {
+            flex-grow: 1;
+            margin: 0 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        .or-divider span {
+            color: #050404;
+        }
+    </style>
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form" id="loginForm">
+            <input type="text" id="usernameInput" placeholder="Username" required>
+            <input type="password" id="passwordInput" placeholder="Password" required>
+            <div class="checkbox-container">
+                <label for="policyCheckbox">
+                    <input type="checkbox" id="policyCheckbox" required>
+                    <p>I agree to the company's policy</p>
+                </label>
+            </div>
+            <button type="submit">Login</button>
+            <div class="or-divider">
+                <hr>
+                <span>or</span>
+                <hr>
+            </div>
+            <button type="button" class="signin-button" onclick="location.href='singin.html'">Sign In</button>
+        </form>
+        <button class="return-home-button" onclick="location.href='Landing.html'">Return to Homepage</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginForm = document.getElementById("loginForm");
+
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const username = document.getElementById("usernameInput").value;
+                const password = document.getElementById("passwordInput").value;
+
+                // Check if the credentials are correct (You can replace this with your validation logic)
+                if (username === "123" && password === "123") {
+                    // Redirect to the dealer page
+                    window.location.href = "user-home.html";
+                } else {
+                    // Display an alert for wrong credentials
+                    alert("Wrong credentials. Please try again.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
