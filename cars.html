@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars For Sale</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .car-card {
+            transition: transform 0.5s, opacity 0.5s;
+            display: flex;
+        }
+
+        .car-card.hidden {
+            transform: translateX(100%);
+            opacity: 0;
+            display: none;
+        }
+
+        .car-card-image {
+            flex: 1;
+        }
+
+        .car-card-specs {
+            flex: 1;
+            padding: 1rem;
+            margin: 5px;
+        }
+
+        .car-card-description {
+            flex: 1;
+            padding: 1rem;
+            margin: 5px;
+        }
+
+        .car-card-description p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .car-card {
+    display: block;
+    transform: translateY(100%); /* Start with the cards off-screen */
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center bottom;
+}
+
+.car-card.show {
+    transform: translateY(0); /* Show the cards with a sliding animation */
+}
+
+.car-card {
+    display: block;
+    transition: transform 0.25s ease-in-out;
+    transform-origin: center bottom;
+    transform: translateY(0);
+}
+
+.car-card.hidden {
+    transform: translateY(100%);
+}
+
+.car-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: 25px;
+    text-align: left;
+}
+
+.car-card img {
+    max-width: 460px; /* Adjust the max-width to control image size */
+    height: auto;
+    margin-right: 20px; /* Add margin between image and text */
+}
+
+.car-card h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.car-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0; /* Remove the default margin */
+}
+
+.car-card ul li {
+    margin-bottom: 8px;
+}
+
+.car-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Add margin to separate the button from other elements */
+}
+
+.car-card button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Add this CSS to style the "Check Availability" button */
+.car-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px; /* Adjust the padding to add space around the button */
+    margin-top: 10px; /* Optionally add margin to separate the button from other elements */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.car-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Add this CSS to style the city selector */
+.city-selector {
+    text-align: center;
+    margin: 20px;
+}
+
+#city {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="city-selector">
+        <label for="city">Select a city: </label>
+        <select id="city">
+            <option value="all">All</option>
+            <option value="city1">Mumbai</option>
+            <option value="city2">Bengaluru</option>
+            <!-- Add more cities as needed -->
+        </select>
+    </div>
+
+    <div class="car-cards-container">
+        <div class="car-card" data-city="city1">
+            <div class="car-card-image">
+                <img src="https://electrek.co/wp-content/uploads/sites/3/2020/06/Screen-Shot-2020-06-04-at-2.40.10-PM.jpg?quality=82&strip=all" alt="">
+            </div>
+            <div class="car-card-specs">
+                <h3>Lamborghini Aventador</h3>
+                <p>Engine: naturally aspirated 6.5-liter V12</p>
+                <p>Transmission: Automatic</p>
+                <p>Color: White</p>
+                <p>Price: ₹ 25000 PER/DAY</p>
+                <button>Check Availability</button>
+            </div>
+            <div class="car-card-description">
+                <p>Description: The Lamborghini Aventador boasts comfort, power, and control with a 6.5-liter V12 engine, and stunning white color. It's a must-have for sports car enthusiasts.</p>
+            </div>
+        </div>
+
+        <div class="car-card" data-city="city2">
+            <div class="car-card-image">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/108499/ix-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="">
+            </div>
+            <div class="car-card-specs">
+                <h3>Range Rover Sport</h3>
+                <p>Engine: 3.0 L V6 twin-turbodiesel</p>
+                <p>Transmission: Automatic</p>
+                <p>Color: White</p>
+                <p>Price: ₹ 5000 PER/DAY</p>
+                <button>Check Availability</button>
+            </div>
+            <div class="car-card-description">
+                <p>Description: The Range Rover Sport offers luxury and power with a 3.0 L V6 engine and remarkable performance. Perfect for adventure seekers.</p>
+            </div>
+        </div>
+
+        <div class="car-card" data-city="city1">
+            <div class="car-card-image">
+                <img src="https://robbreport.com/wp-content/uploads/2023/04/cyberster01.jpg?w=1000" alt="">
+            </div>
+            <div class="car-card-specs">
+                <h3>Maruti Suzuki Baleno</h3>
+                <p>Engine: 1.2L K12B petrol</p>
+                <p>Transmission: Manual</p>
+                <p>Color: Blue</p>
+                <p>Price: ₹ 250 PER/DAY</p>
+                <button>Check Availability</button>
+            </div>
+            <div class="car-card-description">
+                <p>Description: The Maruti Suzuki Baleno is a comfortable and practical choice for daily commuting with a zippy 1.2L engine.</p>
+            </div>
+        </div>
+
+        <div class="car-card" data-city="city2">
+            <div class="car-card-image">
+                <img src="https://ev-database.org/img/auto/Rolls-Royce-Spectre/Rolls-Royce-Spectre-01@2x.jpg" alt="">
+            </div>
+            <div class="car-card-specs">
+                <h3>TATA Harrier XZ</h3>
+                <p>Engine: 2.0L turbocharged diesel</p>
+                <p>Transmission: Manual</p>
+                <p>Color: Black</p>
+                <p>Price: ₹ 1000 PER/DAY</p>
+                <button>Check Availability</button>
+            </div>
+            <div class="car-card-description">
+                <p>Description: The TATA Harrier XZ is a budget-friendly SUV with spacious interiors and exceptional control. Ideal for daily commuting.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const citySelector = document.getElementById("city");
+        const carCards = document.querySelectorAll(".car-card");
+        
+        citySelector.addEventListener("change", () => {
+            const selectedCity = citySelector.value;
+            carCards.forEach(card => {
+                if (selectedCity === "all" || card.getAttribute("data-city") === selectedCity) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
