@@ -134,6 +134,30 @@
     border-radius: 3px;
     font-size: 16px;
 }
+
+.top-buttons {
+            position: absolute;
+            top: 25px;
+            left: 5%;
+            z-index: 9999;
+        }
+
+        .top-buttons .button {
+            margin-right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .top-buttons .button:hover {
+            background-color: #0056b3;
+        }
+
+
     </style>
 </head>
 <body>
@@ -142,10 +166,14 @@
         <label for="city">Select a city: </label>
         <select id="city">
             <option value="all">All</option>
-            <option value="city1">Mumbai</option>
-            <option value="city2">Bengaluru</option>
+            <option value="city1">Panvel</option>
+            <option value="city2">Nerul</option>
             <!-- Add more cities as needed -->
         </select>
+    </div>
+    <div class="top-buttons">
+        <!-- Change "page1.html" to the URL of the desired page -->
+        <button class="button" onclick="window.location.href='user-home.html'">Back</button>
     </div>
 
     <div class="car-cards-container">
@@ -154,15 +182,16 @@
                 <img src="https://electrek.co/wp-content/uploads/sites/3/2020/06/Screen-Shot-2020-06-04-at-2.40.10-PM.jpg?quality=82&strip=all" alt="">
             </div>
             <div class="car-card-specs">
-                <h3>Lamborghini Aventador</h3>
-                <p>Engine: naturally aspirated 6.5-liter V12</p>
-                <p>Transmission: Automatic</p>
-                <p>Color: White</p>
+                <h3>Porsche Taycan</h3>
+                <p>Top Speed: 260 Kmph</p>
+                <p>Driving Range : 325 Km</p>
+                <p>Seats: 5</p>
                 <p>Price: ₹ 25000 PER/DAY</p>
                 <button>Check Availability</button>
             </div>
             <div class="car-card-description">
-                <p>Description: The Lamborghini Aventador boasts comfort, power, and control with a 6.5-liter V12 engine, and stunning white color. It's a must-have for sports car enthusiasts.</p>
+                <p>Description: The overwhelming feeling of sitting in an amazing electric sports car: the new Taycan makes electricity even more electrifying. Performance even more impressive. And the extraordinary even more outstanding.
+                    Porsche Taycan Turbo S in Ice Grey Metallic parked in a bright square in a city. View of front and side.</p>
             </div>
         </div>
 
@@ -171,15 +200,18 @@
                 <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/108499/ix-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="">
             </div>
             <div class="car-card-specs">
-                <h3>Range Rover Sport</h3>
-                <p>Engine: 3.0 L V6 twin-turbodiesel</p>
-                <p>Transmission: Automatic</p>
-                <p>Color: White</p>
-                <p>Price: ₹ 5000 PER/DAY</p>
+                <h3>BMW iX</h3>
+                <p>Top Speed: 200 Kmph</p>
+                <p>Driving Range : 425 Km</p>
+                <p>Seats: 5</p>
+                <p>Price: ₹ 20000 PER/DAY</p>
                 <button>Check Availability</button>
             </div>
             <div class="car-card-description">
-                <p>Description: The Range Rover Sport offers luxury and power with a 3.0 L V6 engine and remarkable performance. Perfect for adventure seekers.</p>
+                <p>Description: 
+                    THE ELECTRIC THRILL OF THE DRIVE
+                    Prolific power and instant torque. The iX is an electric trailblazer designed to deliver action-packed adventures and inspiring performance.
+                    </p>
             </div>
         </div>
 
@@ -188,15 +220,15 @@
                 <img src="https://robbreport.com/wp-content/uploads/2023/04/cyberster01.jpg?w=1000" alt="">
             </div>
             <div class="car-card-specs">
-                <h3>Maruti Suzuki Baleno</h3>
-                <p>Engine: 1.2L K12B petrol</p>
-                <p>Transmission: Manual</p>
-                <p>Color: Blue</p>
-                <p>Price: ₹ 250 PER/DAY</p>
+                <h3>MG Cyberster EV</h3>
+                <p>Top Speed: 200 Kmph</p>
+                <p>Driving Range : 800 Km</p>
+                <p>Seats: 2</p>
+                <p>Price: ₹ 40000 PER/DAY</p>
                 <button>Check Availability</button>
             </div>
             <div class="car-card-description">
-                <p>Description: The Maruti Suzuki Baleno is a comfortable and practical choice for daily commuting with a zippy 1.2L engine.</p>
+                <p>Description: The Cyberster EV's sleek design, impressive driving range, and exhilarating performance to attract potential renters seeking a thrilling and eco-friendly driving experience.</p>
             </div>
         </div>
 
@@ -205,15 +237,15 @@
                 <img src="https://ev-database.org/img/auto/Rolls-Royce-Spectre/Rolls-Royce-Spectre-01@2x.jpg" alt="">
             </div>
             <div class="car-card-specs">
-                <h3>TATA Harrier XZ</h3>
-                <p>Engine: 2.0L turbocharged diesel</p>
-                <p>Transmission: Manual</p>
-                <p>Color: Black</p>
-                <p>Price: ₹ 1000 PER/DAY</p>
+                <h3>Rolls-Royce Spectre</h3>
+                <p>Top Speed: 250 Kmph</p>
+                <p>Driving Range : 530 Km</p>
+                <p>Seats: 4</p>
+                <p>Price: ₹ 60000 PER/DAY</p>
                 <button>Check Availability</button>
             </div>
             <div class="car-card-description">
-                <p>Description: The TATA Harrier XZ is a budget-friendly SUV with spacious interiors and exceptional control. Ideal for daily commuting.</p>
+                <p>Description: Rolls-Royce. Built upon the Architecture of Luxury — a custom platform that enables adaptive engineering and peerless ride quality — it combines agile performance with the marque’s signature magic carpet ride. Experience a seamless blend of performance and control.</p>
             </div>
         </div>
     </div>
