@@ -90,16 +90,7 @@
     margin-bottom: 8px;
 }
 
-.car-card button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 15px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px; /* Add margin to separate the button from other elements */
-}
+
 
 .car-card button:hover {
     background-color: #0056b3;
@@ -107,7 +98,7 @@
 
 
 /* Add this CSS to style the "Check Availability" button */
-.car-card button {
+.open-button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -156,6 +147,62 @@
         .top-buttons .button:hover {
             background-color: #0056b3;
         }
+      
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  width: 90%;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=number]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #0056b3;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
 
 
     </style>
@@ -187,7 +234,7 @@
                 <p>Driving Range : 325 Km</p>
                 <p>Seats: 5</p>
                 <p>Price: ₹ 25000 PER/DAY</p>
-                <button>Check Availability</button>
+                <button class="open-button" onclick="openForm()">Check Availability</button>
             </div>
             <div class="car-card-description">
                 <p>Description: The overwhelming feeling of sitting in an amazing electric sports car: the new Taycan makes electricity even more electrifying. Performance even more impressive. And the extraordinary even more outstanding.
@@ -205,7 +252,7 @@
                 <p>Driving Range : 425 Km</p>
                 <p>Seats: 5</p>
                 <p>Price: ₹ 20000 PER/DAY</p>
-                <button>Check Availability</button>
+                <button class="open-button" onclick="openForm()">Check Availability</button>
             </div>
             <div class="car-card-description">
                 <p>Description: 
@@ -225,7 +272,7 @@
                 <p>Driving Range : 800 Km</p>
                 <p>Seats: 2</p>
                 <p>Price: ₹ 40000 PER/DAY</p>
-                <button>Check Availability</button>
+                <button class="open-button" onclick="openForm()">Check Availability</button>
             </div>
             <div class="car-card-description">
                 <p>Description: The Cyberster EV's sleek design, impressive driving range, and exhilarating performance to attract potential renters seeking a thrilling and eco-friendly driving experience.</p>
@@ -242,13 +289,28 @@
                 <p>Driving Range : 530 Km</p>
                 <p>Seats: 4</p>
                 <p>Price: ₹ 60000 PER/DAY</p>
-                <button>Check Availability</button>
+                <button class="open-button" onclick="openForm()">Check Availability</button>
             </div>
             <div class="car-card-description">
                 <p>Description: Rolls-Royce. Built upon the Architecture of Luxury — a custom platform that enables adaptive engineering and peerless ride quality — it combines agile performance with the marque’s signature magic carpet ride. Experience a seamless blend of performance and control.</p>
             </div>
         </div>
     </div>
+
+    <div class="form-popup" id="myForm">
+        <form class="form-container">
+          <h1>  (car name )</h1>
+          <br>
+          <label for="email"><b>Days </b></label>
+        
+      <input type="number" placeholder="Enter no of days" oninput="document.getElementById('result').innerText = (this.value * 25000) || '0'"><!-- add the -->
+      <br><p>=</p>
+      <p id="result"> </p>
+      
+          <button type="submit" class="btn">Submit</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
 
     <script>
         const citySelector = document.getElementById("city");
@@ -264,6 +326,16 @@
                 }
             });
         });
+
+        function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+
     </script>
 </body>
 </html>
